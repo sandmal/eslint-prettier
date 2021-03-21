@@ -21,8 +21,15 @@ exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/sandmal/eslint-prett
 
 ## Intented for own use
 
-Inspired by pauloramos eslint-prettier-airbnb-react. All credits goes to that project.
+I'm tierd of copy pasting the same eslint, prettier config for everyprosject. So this is going to save a lot of time in the future.
+
+Inspired by pauloramos and wesbos
+
+### Credit
+
+All credits goes to Paulo Ramos and Wes Bos.
 
 ```
 https://github.com/paulolramos/eslint-prettier-airbnb-react
+https://github.com/wesbos/eslint-config-wesbos
 ```

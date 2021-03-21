@@ -68,7 +68,7 @@ else
       "react/destructuring-assignment": 0,
       "react/jsx-max-props-per-line": [1, { "when": "" }]
      }
-  }' >> .eslintrc.json
+}' >> .eslintrc.json
 fi
 
 if [ "$skip_prettier_setup" == "true" ]; then
@@ -87,13 +87,13 @@ else
     "bracketSpacing": false,
     "semi": true,
     "arrowParens": "avoid"
-  }' >> .prettierrc.json
+}' >> .prettierrc.json
 fi
 
 echo
 echo -e "Add this under script inside package.json"
 echo
-echo -e "\"lint": "eslint ."\"""
+echo -e "\"lint": "eslint ."\",""
 echo -e "\"lint:fix": "eslint . --fix"\"""
 echo
 echo -e "${GREEN}Finished setting up!${NC}"

@@ -92,8 +92,8 @@ fi
 echo
 echo -e "Add this under script inside package.json"
 echo
-echo -e "lint": "eslint ."
-echo -e "lint:fix": "eslint . --fix"
+echo -e "\"lint": "eslint ."\"""
+echo -e "\"lint:fix": "eslint . --fix"\"""
 echo
 echo -e "${GREEN}Finished setting up!${NC}"
 echo

@@ -75,7 +75,7 @@ if [ "$skip_prettier_setup" == "true" ]; then
   break
 else
   echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
-  > ".prettierrc.json" # truncates existing file (or creates empty)
+  > .prettierrc.json # truncates existing file (or creates empty)
 
   echo "{"'
     "useTabs": false,

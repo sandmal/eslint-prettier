@@ -21,7 +21,7 @@ exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/sandmal/eslint-prett
 
 ## Intented for own use
 
-I'm tierd of copy pasting the same eslint, prettier config for everyprosject. So this is going to save a lot of time in the future.
+I'm tierd of copy & pasting the same eslint, prettier config for everyproject. So this is going to save a lot of time in the future.
 
 Inspired by pauloramos and wesbos
 

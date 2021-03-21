@@ -85,111 +85,49 @@ fi
 echo
 echo -e "${GREEN}Configuring your development environment... ${NC}"
 
-if [ "$default" == "true" ]; then
-  echo
-  echo -e "1/3 ${LCYAN}Installing https://github.com/wesbos/eslint-config-wesbos... ${NC}"
-  echo
-  npx install-peerdeps --dev eslint-config-wesbos
+echo
+echo -e "1/3 ${LCYAN}Installing https://github.com/wesbos/eslint-config-wesbos... ${NC}"
+echo
+npx install-peerdeps --dev eslint-config-wesbos
 
-  if [ "$skip_eslint_setup" == "true" ]; then
-    break
-  else
-    echo
-    echo -e "2/3 ${YELLOW}Building your .eslintrc${config_extension} file...${NC}"
-    > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
-
-    echo ${config_opening}'
-    "extends": ["wesbos"],
-    "rules": {
-      "no-unused-vars": 0,
-      "react/prop-types": 0,
-      "react/button-has-type": 0,
-      "react/jsx-props-no-spreading": 0,
-      "react/destructuring-assignment": 0,
-      "react/jsx-max-props-per-line": [1, { "when": "" }]
-    }
-  }' >> .eslintrc${config_extension}
-  fi
-
-  if [ "$skip_prettier_setup" == "true" ]; then
-    break
-  else
-      echo -e "3/3 ${YELLOW}Building your .prettierrc${config_extension} file... ${NC}"
-      > .prettierrc${config_extension} # truncates existing file (or creates empty)
-
-      echo ${config_opening}'
-      "useTabs": false,
-      "printWidth": 80,
-      "tabWidth": 2,
-      "singleQuote": true,
-      "trailingComma": "es5",
-      "jsxBracketSameLine": false,
-      "bracketSpacing": false,
-      "semi": true,
-      "arrowParens": "avoid"
-    }' >> .prettierrc${config_extension}
-  fi
-
+if [ "$skip_eslint_setup" == "true" ]; then
+  break
 else
+  echo
+  echo -e "2/3 ${YELLOW}Building your .eslintrc${config_extension} file...${NC}"
+  > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
 
-  echo
-  echo -e "1/5 ${LCYAN}ESLint & Prettier Installation... ${NC}"
-  echo
-  $pkg_cmd -D eslint prettier
-
-  echo
-  echo -e "2/5 ${YELLOW}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
-  echo
-  $pkg_cmd -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react babel-eslint
-
-  echo
-  echo -e "3/5 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
-  echo "See https://github.com/prettier/eslint-config-prettier for more details."
-  echo
-  $pkg_cmd -D eslint-config-prettier eslint-plugin-prettier
-
-  if [ "$skip_eslint_setup" == "true" ]; then
-    break
-  else
-    echo
-    echo -e "4/5 ${YELLOW}Building your .eslintrc${config_extension} file...${NC}"
-    > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
-
-    echo ${config_opening}'
-    "extends": [
-      "airbnb",
-      "plugin:prettier/recommended",
-      "prettier/react"
-    ],
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es6": true,
-      "jest": true,
-      "node": true
-    },
-    "rules": {
-      "jsx-a11y/href-no-hash": ["off"],
-      "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-      "max-len": [
-        "warn",
-        {
-          "code": '${max_len_val}',
-          "tabWidth": 2,
-          "comments": '${max_len_val}',
-          "ignoreComments": false,
-          "ignoreTrailingComments": true,
-          "ignoreUrls": true,
-          "ignoreStrings": true,
-          "ignoreTemplateLiterals": true,
-          "ignoreRegExpLiterals": true
-        }
-      ]
-    }
-  }' >> .eslintrc${config_extension}
-  fi
+  echo ${config_opening}'
+  "extends": ["wesbos"],
+  "rules": {
+    "no-unused-vars": 0,
+    "react/prop-types": 0,
+    "react/button-has-type": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/destructuring-assignment": 0,
+    "react/jsx-max-props-per-line": [1, { "when": "" }]
+  }
+}' >> .eslintrc${config_extension}
 fi
 
+if [ "$skip_prettier_setup" == "true" ]; then
+  break
+else
+    echo -e "3/3 ${YELLOW}Building your .prettierrc${config_extension} file... ${NC}"
+    > .prettierrc${config_extension} # truncates existing file (or creates empty)
+
+    echo ${config_opening}'
+    "useTabs": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": false,
+    "bracketSpacing": false,
+    "semi": true,
+    "arrowParens": "avoid"
+  }' >> .prettierrc${config_extension}
+fi
 echo
 echo -e "${GREEN}Finished setting up!${NC}"
 echo

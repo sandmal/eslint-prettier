@@ -38,7 +38,7 @@ finished=false
 config_extension='.json'
 config_opening='{'
 
-if [ "$custom" == "true"]; then
+if [ "$custom" == "true" ]; then
 # Max Line Length Prompt
 while ! $finished; do
   read -p "What max line length do you want to set for ESLint and Prettier? (Recommendation: 80)"
@@ -85,7 +85,7 @@ fi
 echo
 echo -e "${GREEN}Configuring your development environment... ${NC}"
 
-if [ "$default" == "true"]; then
+if [ "$default" == "true" ]; then
   echo
   echo -e "1/3 ${LCYAN}Installing https://github.com/wesbos/eslint-config-wesbos... ${NC}"
   echo

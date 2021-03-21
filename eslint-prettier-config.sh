@@ -75,7 +75,7 @@ if [ "$skip_prettier_setup" == "true" ]; then
   break
 else
     echo -e "3/3 ${YELLOW}Building your .prettierrc file... ${NC}"
-    > .prettierrc # truncates existing file (or creates empty)
+    > '.prettierrc.json' # truncates existing file (or creates empty)
 
     echo ${config_opening}'
     "useTabs": false,
@@ -87,7 +87,7 @@ else
     "bracketSpacing": false,
     "semi": true,
     "arrowParens": "avoid"
-  }' >> .prettierrc
+  }' >> .prettierrc.json
 fi
 echo
 echo -e "${GREEN}Finished setting up!${NC}"

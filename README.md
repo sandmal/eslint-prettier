@@ -12,7 +12,7 @@ cd my-app
 exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/sandmal/eslint-prettier/master/eslint-prettier-config.sh 2> /dev/null)
 ```
 
-3. Add this inside package.json under scrips
+3. Add this inside package.json under scripts
 
 ```bash
   "lint": "eslint .",

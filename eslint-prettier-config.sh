@@ -57,16 +57,16 @@ else
   echo -e "2/3 ${YELLOW}Building your .eslintrc.json file...${NC}"
   > ".eslintrc.json" # truncates existing file (or creates empty)
 
-'{
-    "extends": ["wesbos"],
-    "rules": {
-    "no-unused-vars": 0,
-    "react/prop-types": 0,
-    "react/button-has-type": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/destructuring-assignment": 0,
-    "react/jsx-max-props-per-line": [1, { "when": "" }]
-   }
+  echo '{
+      "extends": ["wesbos"],
+      "rules": {
+      "no-unused-vars": 0,
+      "react/prop-types": 0,
+      "react/button-has-type": 0,
+      "react/jsx-props-no-spreading": 0,
+      "react/destructuring-assignment": 0,
+      "react/jsx-max-props-per-line": [1, { "when": "" }]
+     }
 }' >> .eslintrc.json
 fi
 
@@ -76,21 +76,22 @@ else
   echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
   > ".prettierrc.json" # truncates existing file (or creates empty)
 
-'{
-  "useTabs": false,
-  "printWidth": 80,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "jsxBracketSameLine": false,
-  "bracketSpacing": false,
-  "semi": true,
-  "arrowParens": "avoid"
+  echo '{
+    "useTabs": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": false,
+    "bracketSpacing": false,
+    "semi": true,
+    "arrowParens": "avoid"
 }' >> .prettierrc.json
 fi
 
 echo
 echo -e "Add this under script inside package.json"
+echo
 echo -e "lint": "eslint ."
 echo -e "lint:fix": "eslint . --fix"
 echo

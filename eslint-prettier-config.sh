@@ -35,7 +35,6 @@ if [ -f ".prettierrc.js" -o -f "prettier.config.js" -o -f ".prettierrc.yaml" -o 
   if [[ $REPLY =~ ^[Nn]$ ]]; then
     echo -e "${YELLOW}>>>>> Skipping Prettier config${NC}"
     skip_prettier_setup="true"
-    config_opening='{'
   fi
   echo
 fi
@@ -58,7 +57,7 @@ else
   echo -e "2/3 ${YELLOW}Building your .eslintrc.json file...${NC}"
   > ".eslintrc.json" # truncates existing file (or creates empty)
 
-  '{
+'{
     "extends": ["wesbos"],
     "rules": {
     "no-unused-vars": 0,
@@ -74,21 +73,26 @@ fi
 if [ "$skip_prettier_setup" == "true" ]; then
   break
 else
-    echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
-    > '.prettierrc.json' # truncates existing file (or creates empty)
+  echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
+  > ".prettierrc.json" # truncates existing file (or creates empty)
 
-  '{
-    "useTabs": false,
-    "printWidth": 80,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "jsxBracketSameLine": false,
-    "bracketSpacing": false,
-    "semi": true,
-    "arrowParens": "avoid"
-  }' >> .prettierrc.json
+'{
+  "useTabs": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "jsxBracketSameLine": false,
+  "bracketSpacing": false,
+  "semi": true,
+  "arrowParens": "avoid"
+}' >> .prettierrc.json
 fi
+
+echo
+echo -e "Add this under script inside package.json"
+echo -e "lint": "eslint ."
+echo -e "lint:fix": "eslint . --fix"
 echo
 echo -e "${GREEN}Finished setting up!${NC}"
 echo

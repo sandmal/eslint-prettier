@@ -15,8 +15,8 @@ exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/sandmal/eslint-prett
 3. Add this inside package.json under scrips
 
 ```bash
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+"lint": "eslint .",
+"lint:fix": "eslint . --fix"
 ```
 
 ## Intented for own use

@@ -58,26 +58,26 @@ else
   echo -e "2/3 ${YELLOW}Building your .eslintrc.json file...${NC}"
   > ".eslintrc.json" # truncates existing file (or creates empty)
 
-  echo ${config_opening}'{
-  "extends": ["wesbos"],
-  "rules": {
+  '{
+    "extends": ["wesbos"],
+    "rules": {
     "no-unused-vars": 0,
     "react/prop-types": 0,
     "react/button-has-type": 0,
     "react/jsx-props-no-spreading": 0,
     "react/destructuring-assignment": 0,
     "react/jsx-max-props-per-line": [1, { "when": "" }]
-  }
+   }
 }' >> .eslintrc.json
 fi
 
 if [ "$skip_prettier_setup" == "true" ]; then
   break
 else
-    echo -e "3/3 ${YELLOW}Building your .prettierrc file... ${NC}"
+    echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
     > '.prettierrc.json' # truncates existing file (or creates empty)
 
-    echo ${config_opening}'
+  '{
     "useTabs": false,
     "printWidth": 80,
     "tabWidth": 2,

@@ -44,7 +44,7 @@ fi
 # ----------------------
 
 echo
-echo -e "${GREEN}Configuring your development environment... ${NC}"
+echo -e "${GREEN}Configuring development environment... ${NC}"
 
 echo
 echo -e "1/3 ${LCYAN}Installing https://github.com/wesbos/eslint-config-wesbos... ${NC}"
@@ -93,8 +93,8 @@ fi
 echo
 echo -e "Add this under script inside package.json"
 echo
-echo -e "\"lint": "eslint ."\",""
-echo -e "\"lint:fix": "eslint . --fix"\"""
+echo -e "\"lint\"": "eslint ."\",""
+echo -e "\"lint:fix\"": "eslint . --fix"\"""
 echo
 echo -e "${GREEN}Finished setting up!${NC}"
 echo

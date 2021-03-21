@@ -15,8 +15,8 @@ exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/sandmal/eslint-prett
 3. Add this inside package.json under scrips
 
 ```bash
-"lint": "eslint .",
-"lint:fix": "eslint . --fix"
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
 ```
 
 ## Intented for own use
@@ -29,7 +29,6 @@ Inspired by pauloramos and wesbos
 
 All credits goes to Paulo Ramos and Wes Bos.
 
-```
-https://github.com/paulolramos/eslint-prettier-airbnb-react
-https://github.com/wesbos/eslint-config-wesbos
-```
+Paulo ramos @ https://github.com/paulolramos/eslint-prettier-airbnb-react
+
+Wes Bos @ https://github.com/wesbos/eslint-config-wesbos

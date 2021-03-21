@@ -38,6 +38,7 @@ if [ -f ".prettierrc.js" -o -f "prettier.config.js" -o -f ".prettierrc.yaml" -o 
   fi
   echo
 fi
+
 # ----------------------
 # Perform Configuration
 # ----------------------
@@ -57,7 +58,7 @@ else
   echo -e "2/3 ${YELLOW}Building your .eslintrc.json file...${NC}"
   > ".eslintrc.json" # truncates existing file (or creates empty)
 
-  '{
+  echo "{ "'
       "extends": ["wesbos"],
       "rules": {
       "no-unused-vars": 0,
@@ -76,7 +77,7 @@ else
   echo -e "3/3 ${YELLOW}Building .prettierrc.json file... ${NC}"
   > ".prettierrc.json" # truncates existing file (or creates empty)
 
-  '{
+  echo "{"'
     "useTabs": false,
     "printWidth": 80,
     "tabWidth": 2,
